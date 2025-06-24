@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const token = import.meta.env.NOCODB_API_KEY;
+const token = 'TNUR4Xz6kBJcDDE_R-6ct6gThnzm-ya4RpGvBsoF';
 
 function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
