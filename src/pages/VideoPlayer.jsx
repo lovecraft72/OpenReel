@@ -9,14 +9,13 @@ import { GiveLinkForThisTMBDId } from '../functions/nocodbFunctions';
 export default function VideoPlayer() {
 
     const {id} = useParams()
-    const [dataReceived, setDataReceived] = useState(null);
+
     const [videoLink, setVideoLink] = useState(null)
 
     async function getDataFromNoCoDB(tmbdId){
         let data = await GiveLinkForThisTMBDId(tmbdId)
         if (data != false) {
             try {
-                setDataReceived(data)
                 let vidLink = `https://archive.org/serve/${encodeURI(data.list[0].IA_Identifier)}/${encodeURI(data.list[0].IA_FileName)}`
                 setVideoLink(vidLink);
                 console.log(data)
