@@ -1,0 +1,177 @@
+/* Note: this CSS is only an example, you can overlay whatever you want using the activeItem logic */
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+
+#infinite-grid-menu-canvas {
+  cursor: grab;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  outline: none;
+  /* background: transparent; */
+
+
+
+}
+
+#infinite-grid-menu-canvas:active {
+  cursor: grabbing;
+}
+
+.action-button {
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  z-index: 10;
+  width: 60px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  background: #5227FF;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 5px solid #ffffff;
+}
+
+.face-title {
+  user-select: none;
+  position: absolute;
+  font-weight: 900;
+  font-size: 4rem;
+  /* left: 1.6em;
+  top: 50%; */
+}
+
+.action-button-icon {
+  user-select: none;
+  position: relative;
+  color: #fff;
+  top: 2px;
+  font-size: 26px;
+}
+
+.face-title {
+  font-family: "Bungee Inline", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  position: absolute;
+  max-width: 10em;
+  /* top: 80%;
+  
+  transform: translate(20%, -50%); */
+}
+
+.face-title.active {
+  opacity: 1;
+  transform: translate(4%, -30%);
+  pointer-events: auto;
+  transition: 0.5s ease;
+  background-color: rgba(0, 0, 0, 0.628);
+}
+
+.face-title.inactive {
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.1s ease;
+}
+
+.face-description {
+
+  font-family: "Merriweather", serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+
+  user-select: none;
+  position: absolute;
+  max-width: 26em;
+  /* background-color: #fff; */
+  /* top: 80%; */
+  font-size: 1.2rem;
+  /* right: 0px; */
+  /* transform: translate(0, -20%); */
+}
+
+.face-description.active {
+  opacity: 1;
+  transform: translate(-10%, -10%);
+  pointer-events: auto;
+  transition: 0.5s ease;
+  background-color: rgba(0, 0, 0, 0.628);
+  max-height: 15vh;
+  overflow: hidden;
+}
+
+.face-description.inactive {
+  pointer-events: none;
+  transform: translate(-60%, -50%);
+  opacity: 0;
+  transition: 0.1s ease;
+}
+
+.action-button {
+  position: absolute;
+  left: 50%;
+}
+
+.action-button.active {
+  bottom: 3.8em;
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+  transition: 0.5s ease;
+}
+
+.action-button.inactive {
+  bottom: -80px;
+  transform: translateX(-50%) scale(0);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.1s ease;
+}
+
+@media (max-width: 1500px) {
+  /* .face-title, .face-description {
+    display: none;
+  } */
+  .face-title {
+  position: absolute;
+  max-width: 90vw;
+  top: 0%;
+  /* transform: translate(0%, 100%); */
+  }
+
+  .face-title.active {
+    width: 80vw;
+    height: fit-content;
+    top: 13%;
+    font-size: 3em;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000069;
+    transform: translate(0%, 0%);
+    text-align: center;
+  }
+
+  .face-description {
+    top: 100%;
+  }
+
+  .face-description.active {
+    max-width: 90vw;
+    max-height: 15vh;
+    font-size: larger;
+    overflow: hidden;
+    height: fit-content;
+    transform: translate(0%, -30%);
+    text-align: center;
+    left: 0%;
+    top: 80%;
+    /* overflow: hidden; */
+    justify-self: center;
+    background-color: #00000069;
+  }
+}
