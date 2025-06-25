@@ -923,7 +923,7 @@ export default function InfiniteMenu({ items = [] }) {
             <div className={`titleFont absolute top-32 max-w-[90%] text-4xl align-middle z-[100] scale-0 transition-all duration-200 ${isMoving ? '' : 'block scale-100'}`}>
               {activeItem?.title || ""}
             </div>
-            <div className={`descriptionFont absolute bottom-58 max-w-[90%] text-sm align-middle z-[100] max-h-7 scale-0 transition-all duration-200 ${isMoving ? '' : 'block scale-100'}`}>
+            <div className={`descriptionFont absolute bottom-34 bg-black/70 max-w-[90%] text-sm align-middle z-[100] max-h-30 scale-0 transition-all duration-200 ${isMoving ? '' : 'block scale-100'}`}>
               {activeItem?.description || ""}
             </div>
             <span className='absolute bottom-90 right-20'>
