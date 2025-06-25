@@ -31,7 +31,7 @@ export default function InfiScroll({moviesFetched}){
                     image: img,
                     link: element.TMDb_ID,
                     title: `${element.Title} (${Math.round(element.Year)})`,
-                    description: element.Overview
+                    description: `${element.Overview.length > 205 ? element.Overview.substring(0,205) + '...' : element.Overview}`
                 }
                 temp_items = [...temp_items, movObj]
             })
