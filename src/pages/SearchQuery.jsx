@@ -28,7 +28,7 @@ function SearchQuery() {
 
     return (
     <div className='w-screen min-h-screen bg-slate-900 text-slate-200 flex justify-center overflow-x-hidden pt-[7em] md:pt-[0em] overflow-scroll'>
-        <div title='cards-container' className='h-[80%] max-w-[80%] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-10 gap-y-5'>
+        <div title='cards-container' className='h-[80%] max-w-[80%] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-10 gap-y-5 md:mt-35'>
             {
                 (searchResults && searchResults.length > 0 ) ? searchResults.map((e) => {
                     return (<TiltedCard
