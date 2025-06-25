@@ -15,6 +15,20 @@
 
 }
 
+.titleFont{
+  font-family: "Bungee Inline", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  user-select: none;
+}
+
+.descriptionFont{
+  font-family: "Merriweather", serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+
 #infinite-grid-menu-canvas:active {
   cursor: grabbing;
 }
@@ -39,7 +53,7 @@
   user-select: none;
   position: absolute;
   font-weight: 900;
-  font-size: 4rem;
+  /* font-size: 2em; */
   /* left: 1.6em;
   top: 50%; */
 }

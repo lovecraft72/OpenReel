@@ -8,4 +8,5 @@ export default defineConfig({
   base: '',
   // base: '/OpenReel/',
   plugins: [react(), tailwindcss(), svgr()],
+  server: {host:true, server:3000}
 })

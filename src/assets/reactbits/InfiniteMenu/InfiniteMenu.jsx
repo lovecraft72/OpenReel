@@ -906,33 +906,54 @@ export default function InfiniteMenu({ items = [] }) {
     <>
     {/* "background-image: url('{}');" */}
     <div class="bg-cover bg-center h-screen" style={{ backgroundImage: `url(${bgDefault})` }}>
-    <div style={{ position: 'relative', width: '100%', height: '100%'}}>
-      {/* <div className='min-h-screen bg-amber-900 absolute'></div> */}
-      <canvas
-        id="infinite-grid-menu-canvas"
-        ref={canvasRef}
-        className='bg-transparent'
-        />
-      
+      <div style={{ position: 'relative', width: '100%', height: '100%'}}>
+        {/* <div className='min-h-screen bg-amber-900 absolute'></div> */}
+        <canvas
+          id="infinite-grid-menu-canvas"
+          ref={canvasRef}
+          className='bg-transparent'
+          />
+        
+      </div >
+    </div>
 
-      {activeItem && (
+    {activeItem && (
         <>
+          <div className='md:hidden fixed inset-0 pointer-events-none flex flex-col items-center justify-center align-middle text-center h-screen w-screen gap-80 text-slate-300'>
+            <div className={`titleFont absolute top-32 max-w-[90%] text-4xl align-middle z-[100] scale-0 transition-all duration-200 ${isMoving ? '' : 'block scale-100'}`}>
+              {activeItem?.title || ""}
+            </div>
+            <div className={`descriptionFont absolute bottom-58 max-w-[90%] text-sm align-middle z-[100] max-h-7 scale-0 transition-all duration-200 ${isMoving ? '' : 'block scale-100'}`}>
+              {activeItem?.description || ""}
+            </div>
+            <span className='absolute bottom-90 right-20'>
+              <div onClick={handleButtonClick} className={`action-button ${isMoving ? 'inactive' : 'active'}`}>
+                <p className="action-button-icon">&#x2197;</p>
+              </div>
+            </span>
+            
+          </div>
+          
+
           {/* {setBgImg(activeItem.Backdrop_Path)} */}
           {/* <h2 className={`face-title ${isMoving ? 'inactive' : 'active'}`}> */}
-          <h2 className={`face-title transition-all duration-200 -bottom-6 scale-0 ${isMoving ? ' ' : 'scale-100 block p-4 m-5 bottom-2 bg-black/70 rounded-2xl'}`}>
-            {activeItem.title}
+          
+          <h2 className={`face-title transition-all duration-200 -bottom-6 scale-0 hidden ${isMoving ? ' ' : 'scale-100 md:block p-4 m-5 bottom-2 bg-black/70 rounded-2xl text-5xl'}`}>
+            {activeItem?.title || ""}
           </h2>
+
 
           <p className={`face-description transition-all duration-200 bottom-3 right-4 py-10 px-4 bg-black/70 rounded-2xl ${isMoving ? 'scale-0' : 'scale-100'}`}> {activeItem.description}</p>
 
-          <div onClick={handleButtonClick} className={`action-button ${isMoving ? 'inactive' : 'active'}`}>
-            <p className="action-button-icon">&#x2197;</p>
-          </div>
+          <span className='hidden md:block'>
+              <div onClick={handleButtonClick} className={`action-button ${isMoving ? 'inactive' : 'active'}`}>
+                <p className="action-button-icon">&#x2197;</p>
+              </div>
+          </span>
+          
         </>
       )
     }
-    </div >
-    </div>
     </>
   );
 }
