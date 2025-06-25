@@ -9,7 +9,8 @@ function MoviePage() {
     const[movieTitle, setMovieTitle] = useState('');
     const[movieDescription, setMovieDescription] = useState('');
     const { id } = useParams()
-    let urlOfVideoFile = `${window.location.protocol}//${window.location.host}${import.meta.env.BASE_URL}video/${id}`
+    // let urlOfVideoFile = `${window.location.protocol}//${window.location.host}${import.meta.env.BASE_URL}video/${id}`
+    let urlOfVideoFile = `${window.location.protocol}//${window.location.host}?videoPlayback=${id}`
 
     useEffect(() => {
         getMovieData();

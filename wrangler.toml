@@ -1,0 +1,3 @@
+name = 'open-reel-x'
+compatibility_date = "2025-06-24"
+assets = { directory = "dist" }

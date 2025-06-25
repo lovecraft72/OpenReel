@@ -9,7 +9,7 @@ import { BrowserRouter } from 'react-router-dom'
 // GetRandomMoviesFromNoco(20);
 
 createRoot(document.getElementById('root')).render(
-    <BrowserRouter basename="/OpenReel">
+    <BrowserRouter>
       <App />
     </BrowserRouter>
 )

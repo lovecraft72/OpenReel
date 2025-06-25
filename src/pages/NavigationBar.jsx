@@ -11,6 +11,7 @@ function NavigationBar() {
         }
         else {
             navigate(`/search/${encodeURI(query.trim())}`)
+            // navigate(`/video/109632`)
         }
     }
 
