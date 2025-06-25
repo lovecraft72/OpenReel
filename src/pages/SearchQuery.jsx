@@ -27,21 +27,24 @@ function SearchQuery() {
     }
 
     return (
-    <div className='w-screen h-screen bg-slate-900 text-slate-200 flex items-center justify-center overflow-x-hidden'>
-        <div title='cards-container' className='h-[80%] max-w-[80%] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-10 gap-y-3'>
+    <div className='w-screen min-h-screen bg-slate-900 text-slate-200 flex items-center justify-center overflow-x-hidden pt-[7em] md:pt-[0em] overflow-scroll'>
+        <div title='cards-container' className='h-[80%] max-w-[80%] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-10 gap-y-5'>
             {
                 (searchResults && searchResults.length > 0 ) ? searchResults.map((e) => {
                     return (<TiltedCard
                         class='cursor-pointer'
+                        className=' '
                         key={e.TMDb_ID}
                         TMDb_ID={e.TMDb_ID}
                         imageSrc={e.Poster_Path || defaultPoster}
                         altText={e.Title}
                         captionText={e.Title}
-                        containerHeight="300px"
-                        containerWidth="200px"
-                        imageHeight="300px"
-                        imageWidth="200px"
+                        // containerHeight="300px"
+                        // containerWidth="200px"
+                        containerHeight="200px"
+                        containerWidth="140px"
+                        imageHeight="200px"
+                        imageWidth="140px"
                         rotateAmplitude={12}
                         scaleOnHover={1.2}
                         showMobileWarning={false}
