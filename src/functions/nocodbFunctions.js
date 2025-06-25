@@ -75,7 +75,7 @@ export async function SearchForMoviesOnNoCo(searchQuery, limit = 15) {
 
     try {
         const response = await axios.request(options);
-        console.log('In SearchForMoviesOnNoCo, received data:', response.data);
+        // console.log('In SearchForMoviesOnNoCo, received data:', response.data);
         return response.data;
     } catch (err) {
         console.error("Couldn't get movies from NOCODB:", err);
